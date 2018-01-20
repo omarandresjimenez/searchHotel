@@ -1,0 +1,19 @@
+<!-- message  from main component -->
+<div class="w3-light-grey w3-container w3-padding-2" *ngIf="seletedHotel">
+  <p class="w3-right w3-text-green" > Seleccionaste:  <b>{{seletedHotel}}</b> 
+  </p></div>
+<!-- search bar panel -->
+<side-bar></side-bar>
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>AlMundo.com</span>
+</header>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!--main section search results -->
+<main-container [showCount]="true"  (onViewClick)="showMessage($event)"></main-container>
+
+
+

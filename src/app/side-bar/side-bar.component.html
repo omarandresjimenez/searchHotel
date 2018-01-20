@@ -1,0 +1,43 @@
+<nav class="w3-sidebar w3-sand w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar">
+  <br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-red w3-hide-large w3-display-topleft" style="width:100%;font-size:12px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-4">
+      <b>Almundo.com</b>
+    </h3>
+  </div>
+  <div class="w3-container" id="contact" style="margin-top:5px">
+    <h3 class="w3-large w3-text-red">
+      <b>Filtros:</b>
+    </h3>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+    <form #userForm="ngForm">
+      <div class="w3-section">
+
+        <label>Hotel:</label>
+        <input class="w3-input w3-border" [(ngModel)]="hotelName" type="text" name="hotelName">
+      </div>
+      <div class="w3-section">
+        <label>Estrellas</label><br>
+        <input type="checkbox" name="stars0" [(ngModel)]="stars[0]">
+        <img src="../../assets/1s.PNG">
+        <br>
+        <input type="checkbox" name="stars1" [(ngModel)]="stars[1]">
+        <img src="../../assets/2s.PNG">
+        <br>
+        <input type="checkbox" name="3star" [(ngModel)]="stars[2]">
+        <img src="../../assets/3s.PNG">
+        <br>
+        <input type="checkbox" name="4star" [(ngModel)]="stars[3]">
+        <img src="../../assets/4s.PNG">
+        <br>
+        <input type="checkbox" name="5star"[(ngModel)]="stars[4]">
+        <img src="../../assets/5s.PNG">
+        <br>
+      </div>
+      <button (click)="searchHotel()" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Buscar</button>
+    </form>
+
+  </div>
+</nav>

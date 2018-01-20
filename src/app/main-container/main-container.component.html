@@ -1,0 +1,57 @@
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+  
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:4px" id="showcase">
+      <h2 class="w3-large w3-text-red"><b>Resultados Búsqueda</b></h2>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+    </div>
+    
+    <div class="w3-container" style="margin-top:0px" id="showcase" *ngIf="hotels && showCount">
+        <h2 class="w3-large  w3-text-green"><b>{{hotels.length}} registros!</b></h2>
+    </div>
+    
+    <!-- show info hotels -->
+    <ng-container *ngFor="let hotel of hotels">
+    <div class="w3-row-padding">
+      <div class="w3-col m3" style="padding:0px">
+        <div >
+          <img src="/assets/hotels/{{hotel.image}}" title="{{hotel.name}}" style="width:100%; height:250px">
+        </div>
+      </div>
+      <div class="w3-col m6 w3-sand card-2" >
+        <div >
+          <div class="w3-container">
+            <h3>{{hotel.name}}</h3>
+            <p > <img src="/assets/{{hotel.stars}}s.PNG" class="maxmargin" ></p>
+            <p > <img src="/assets/amenities.PNG" class="maxmargin"></p>
+            <ul class="maxmargin">
+              <li *ngFor="let amenity of hotel.amenities">
+                {{amenity}}
+              </li>
+
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m3 w3-khaki card-3"  >
+        <div >
+      
+          <div class="w3-container">
+            <br>
+            <h4>Precio por
+              noche por habitación</h4>
+            <p class="w3-opacity">USD: <b>{{hotel.price | number:'1.2-2' }}</b>
+
+            </p>
+            <button  class="w3-button w3-block w3-orange w3-margin-bottom"
+               (click)="onViewHotel(hotel.name + '-' + hotel.id)">Ver Hotel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   <br>
+  </ng-container>
+  <!-- End page content -->
+  </div>
